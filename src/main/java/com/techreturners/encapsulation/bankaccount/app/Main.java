@@ -8,7 +8,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        WeatherReporter weatherReporter = new WeatherReporter("California", 20);
+        WeatherReporter weatherReporter = new WeatherReporter("London", 20);
         System.out.println(weatherReporter.showWeatherReport());
 
     }
