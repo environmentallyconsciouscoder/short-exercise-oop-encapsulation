@@ -11,4 +11,28 @@ public class WeatherReporterTest {
         WeatherReporter weatherReporter = new WeatherReporter("London", 20);
         assertEquals("I am in London and it is 🌦. Ahhh...it's just right 😊!. The temperature in Fahrenheit is 68.", weatherReporter.showWeatherReport());
     }
+
+    @Test
+    public void testGetTempInFahrenheit() {
+        WeatherReporter weatherReporter = new WeatherReporter("London", 20);
+        double tempInFahrenheit = weatherReporter.getTempInFahrenheit();
+//        System.out.println(tempInFahrenheit);
+        assertEquals(68.0, tempInFahrenheit);
+    }
+
+    @Test
+    public void testGetCheckLocation() {
+        WeatherReporter weatherReporter = new WeatherReporter("London", 20);
+        String location = weatherReporter.getCheckLocation();
+//        System.out.println(location);
+        assertEquals("🌦", location);
+    }
+
+    @Test
+    public void testGetCheckTemperature() {
+        WeatherReporter weatherReporter = new WeatherReporter("London", 20);
+        String temperature = weatherReporter.getCheckTemperature();
+//        System.out.println(temperature);
+        assertEquals("Ahhh...it's just right 😊!", temperature);
+    }
 }

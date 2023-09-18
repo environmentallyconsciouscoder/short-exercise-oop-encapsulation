@@ -18,8 +18,16 @@ public class WeatherReporter {
         return MessageFormat.format("I am in {0} and it is {1}. {2}. The temperature in Fahrenheit is {3}.", location.getLocation(), checkLocation(), checkTemperature(), newTemp);
     }
 
+    public double getTempInFahrenheit() {
+        return getNewTemp();
+    }
+
     private double getNewTemp() {
         return (9.0 / 5.0) * temperature.getTemperature() + 32;
+    }
+
+    public String getCheckLocation() {
+        return checkLocation();
     }
 
     private String checkLocation() {
@@ -31,6 +39,9 @@ public class WeatherReporter {
         };
     }
 
+    public String getCheckTemperature() {
+        return checkTemperature();
+    }
 
     private String checkTemperature() {
         if (temperature.getTemperature() > 30) {
