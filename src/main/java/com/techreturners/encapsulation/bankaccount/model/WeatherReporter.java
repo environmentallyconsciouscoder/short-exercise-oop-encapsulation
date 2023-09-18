@@ -23,15 +23,14 @@ public class WeatherReporter {
     }
 
     private String checkLocation() {
-        if (Objects.equals(location.getLocation(), "London")) {
-            return WeatherConstants.LONDON_EMOJI;
-        } else if (Objects.equals(location.getLocation(), "California")) {
-            return WeatherConstants.CALIFORNIA_EMOJI;
-        } else if (Objects.equals(location.getLocation(), "Cape Town")) {
-            return WeatherConstants.CAPE_TOWN_EMOJI;
-        }
-        return WeatherConstants.DEFAULT_WEATHER_EMOJI;
+        return switch (location.getLocation()) {
+            case "London" -> WeatherConstants.LONDON_EMOJI;
+            case "California" -> WeatherConstants.CALIFORNIA_EMOJI;
+            case "Cape Town" -> WeatherConstants.CAPE_TOWN_EMOJI;
+            default -> WeatherConstants.DEFAULT_WEATHER_EMOJI;
+        };
     }
+
 
     private String checkTemperature() {
         if (temperature.getTemperature() > 30) {
@@ -41,5 +40,7 @@ public class WeatherReporter {
         }
             return WeatherConstants.COMFORTABLE_TEMPERATURE_MESSAGE;
     }
+
+
 
 }
