@@ -14,8 +14,12 @@ public class WeatherReporter {
     }
 
     public String showWeatherReport() {
-        double newTemp = (9.0 / 5.0) * temperature.getTemperature() + 32;
+        double newTemp = getNewTemp();
         return MessageFormat.format("I am in {0} and it is {1}. {2}. The temperature in Fahrenheit is {3}.", location.getLocation(), checkLocation(), checkTemperature(), newTemp);
+    }
+
+    private double getNewTemp() {
+        return (9.0 / 5.0) * temperature.getTemperature() + 32;
     }
 
     private String checkLocation() {
